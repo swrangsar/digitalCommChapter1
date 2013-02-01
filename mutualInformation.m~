@@ -1,0 +1,16 @@
+function Ixy = mutualInformation(px1)
+
+
+p = 0;
+
+
+px0 = 1-px1;
+channel = [p 1-p; 1-p p];
+px = [px0 px1];
+py = (px * channel);
+pxy = channel .* [px px];
+pxnew = [px px];
+pynew = [py py]';
+Ixy = sum(pxy .* log2(pxy ./ (pxnew.*pynew)));
+
+end

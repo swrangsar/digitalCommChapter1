@@ -1,0 +1,2 @@
+close all; clear all;
+p = linspace(0, 1, 100);
